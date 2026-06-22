@@ -3,12 +3,10 @@ package com.keva.emp.controller;
 import com.keva.emp.model.request.UserInvite;
 import com.keva.emp.model.response.ApiResponse;
 import com.keva.emp.service.UserService;
+import com.keva.emp.utils.KevaConstants;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -21,5 +19,12 @@ public class UserController {
     public ApiResponse<String> inviteEmployee(@RequestBody @Valid UserInvite userInvite) {
 
         return userService.inviteEmployee(userInvite);
+    }
+
+    @GetMapping
+    public ApiResponse<String> greetingMessage(){
+        return ApiResponse.successResponse(
+                KevaConstants.SuccessMessages.INVITATION_EMAIL_SENT_SUCCESSFULLY,
+                null);
     }
 }
