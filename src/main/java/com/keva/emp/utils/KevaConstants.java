@@ -9,11 +9,14 @@ public class KevaConstants {
     public class SuccessMessages {
         public static final String SUCCESS = "SUCCESS";
         public static final String INVITATION_EMAIL_SENT_SUCCESSFULLY = "Invitation email sent successfully";
+        public static final String RESP_MESSAGE_SIGNIN_SUCCESSFULLY = "Successfully logged in.";
     }
 
     public static class ErrorMessages {
         public static final String FAILED = "FAILED";
         public static final String USERNAME_ALREADY_EXIT = "User name Already exit";
+        public static final String INVALID_USERNAME_PASSWORD = "Oops! It looks like your email address or password isn't correct. Please double-check and try again!";
+        public static final String RESP_MESSAGE_USER_NOT_FOUND = "User not found.";
     }
 
     public static final class Codes {

@@ -23,10 +23,10 @@ import static org.springframework.security.config.Customizer.withDefaults;
 public class SecurityConfiguration {
 
     private static final String[] WHITE_LIST_URL = {
-            "/auth/get_otp",
-            "/auth/verify_otp",
-            "/auth/login",
-            "/auth/set_password"
+            "/api/auth/get_otp",
+            "/api/auth/verify_otp",
+            "/login",
+            "/api/auth/set_password"
     };
 
     @Bean
@@ -46,6 +46,10 @@ public class SecurityConfiguration {
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
+    }
+
+    public UserDetailsService userDetailsService(){
+        return new CustomUserDetailService();
     }
 
     @Bean
